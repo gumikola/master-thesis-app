@@ -40,10 +40,20 @@ class TasksClass
 
 public:
     TasksClass();
-    void                       add_task(JobStruct job);
-    uint                       calc_makespan(void);
-    int                        size(void);
-    JobStruct&                 operator[](int idx);
+    void       add_task(JobStruct job);
+    uint       calc_makespan(void);
+    int        size(void);
+    JobStruct& operator[](int idx);
+    TasksClass operator+(TasksClass& x)
+    {
+        for (auto i : x)
+        {
+            i.id = this->task[this->size() - 1].id + 1;
+            this->add_task(i);
+        }
+
+        return *this;
+    }
     QList<JobStruct>::iterator begin(void);
     QList<JobStruct>::iterator end(void);
     void                       print(void);

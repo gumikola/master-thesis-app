@@ -1,4 +1,5 @@
 QT -= gui
+QT += sql
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -16,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+        database/database.cpp \
         brute_force/brute_force.cpp \
         simulated_annealing/simulated_annealing.cpp \
         tasks/tasks.cpp
@@ -26,6 +28,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    database/database.h \
     brute_force/brute_force.h \
     simulated_annealing/simulated_annealing.h \
     tasks/tasks.h
