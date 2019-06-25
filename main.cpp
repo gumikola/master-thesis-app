@@ -27,24 +27,29 @@ int main()
     qDebug() << "Badania";
     qDebug() << "Ilosć zadań:" << test_case.size() << "\n";
 
-    qDebug() << "Brute Force";
-    timer.start();
-    result = brute_force(test_case);
-    qDebug() << "Czas wykonywania :" << timer.nsecsElapsed();
-    qDebug() << result.name_prj();
-    qDebug() << "Rozwiązanie:" << result.calc_makespan();
-    qDebug() << "\n";
+    //    qDebug() << "Brute Force";
+    //    timer.start();
+    //    result = brute_force(test_case);
+    //    qDebug() << "Czas wykonywania :" << timer.elapsed();
+    //    qDebug() << result.name_prj();
+    //    qDebug() << "Rozwiązanie:" << result.calc_makespan();
+    //    qDebug() << "\n";
 
-    for (auto j : sa_param)
+    for (int i = 0; i <= 3; i++)
     {
-        qDebug() << "Simulated Annealing"
-                 << "T_start" << j[0] << "T_stop" << j[1] << "lambda" << j[2];
-        timer.start();
-        result = simulated_annealing(test_case, j[0], j[1], j[2]);
-        qDebug() << "Czas wykonywania:" << timer.elapsed();
-        qDebug() << result.name_prj();
-        qDebug() << "Rozwiązanie:" << result.calc_makespan();
+        qDebug() << "Iteracja:" << i;
         qDebug() << "\n";
+        for (auto j : sa_param)
+        {
+            qDebug() << "Simulated Annealing"
+                     << "T_start" << j[0] << "T_stop" << j[1] << "lambda" << j[2];
+            timer.start();
+            result = simulated_annealing(test_case, j[0], j[1], j[2]);
+            qDebug() << "Czas wykonywania:" << timer.nsecsElapsed();
+            qDebug() << result.name_prj();
+            qDebug() << "Rozwiązanie:" << result.calc_makespan();
+            qDebug() << "\n";
+        }
     }
 
     return 0;
