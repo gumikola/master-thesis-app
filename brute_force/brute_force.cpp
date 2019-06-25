@@ -5,8 +5,11 @@ TasksClass brute_force(TasksClass task)
     TasksClass best          = TasksClass();
     uint       best_makespan = UINT_MAX;
 
+    static int i = 0;
     do
     {
+        i++;
+        qDebug() << i;
         uint makespan = task.calc_makespan();
         if (makespan < best_makespan)
         {
