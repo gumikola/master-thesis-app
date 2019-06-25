@@ -30,7 +30,7 @@ int main()
     qDebug() << "Brute Force";
     timer.start();
     result = brute_force(test_case);
-    qDebug() << "Czas wykonywania :" << timer.elapsed();
+    qDebug() << "Czas wykonywania :" << timer.nsecsElapsed();
     qDebug() << result.name_prj();
     qDebug() << "Rozwiązanie:" << result.calc_makespan();
     qDebug() << "\n";
