@@ -91,17 +91,19 @@ TasksClass Database::fetch_by_id(int id, int quantity)
             {
                 side_a = JobStruct(
                     QString("%1 %2 [Strona A]").arg(q.value("company").toString(), q.value("name").toString()),
-                    opertion_time(q.value("operation_side_a").toInt()), changeover_time(q.value("changeover").toInt()));
+                    opertion_time(q.value("operation_side_a").toInt()),
+                    changeover_time(q.value("changeover_side_a").toInt()));
 
                 side_b = JobStruct(
                     QString("%1 %2 [Strona B]").arg(q.value("company").toString(), q.value("name").toString()),
-                    opertion_time(q.value("operation_side_b").toInt()), changeover_time(q.value("changeover").toInt()));
+                    opertion_time(q.value("operation_side_b").toInt()),
+                    changeover_time(q.value("changeover_side_b").toInt()));
             }
             else
             {
-                side_a = JobStruct(QString("%s %s").arg(q.value("company").toString(), q.value("name").toString()),
+                side_a = JobStruct(QString("%1 %2").arg(q.value("company").toString(), q.value("name").toString()),
                                    opertion_time(q.value("operation_side_a").toInt()),
-                                   changeover_time(q.value("changeover").toInt()));
+                                   changeover_time(q.value("changeover_side_a").toInt()));
             }
 
             for (int i = 0; i < quantity; i++)

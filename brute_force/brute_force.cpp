@@ -7,9 +7,11 @@ TasksClass brute_force(TasksClass task)
 
     do
     {
-        if (task.calc_makespan() < best_makespan)
+        uint makespan = task.calc_makespan();
+        if (makespan < best_makespan)
         {
-            best = task;
+            best_makespan = makespan;
+            best          = task;
         }
     } while (std::next_permutation(task.begin(), task.end()));
 

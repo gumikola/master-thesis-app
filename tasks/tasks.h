@@ -22,7 +22,6 @@ struct JobStruct
         , p(task_time)
         , s(adapt_time)
     {
-        s.insert(0, 0);
         for (int i = s.size(); i < p.size(); i++)
         {
             s.append(0);
@@ -56,7 +55,7 @@ public:
     }
     QList<JobStruct>::iterator begin(void);
     QList<JobStruct>::iterator end(void);
-    void                       print(void);
+    QList<QString>             name_prj(void);
 };
 
 #endif // TASKS_H

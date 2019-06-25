@@ -30,7 +30,7 @@ uint TasksClass::start_operation(uint idx_machine, uint idx_task)
     }
     else
     {
-        condition2 = stop_operation(idx_machine, idx_task - 1) + adapt_time(idx_machine, idx_task);
+        condition2 = stop_operation(idx_machine, idx_task - 1) + adapt_time(idx_machine, idx_task - 1);
     }
 
     return qMax(condition1, condition2);
@@ -73,12 +73,12 @@ QList<JobStruct>::iterator TasksClass::end(void)
     return this->task.end();
 }
 
-void TasksClass::print(void)
+QList<QString> TasksClass::name_prj(void)
 {
-    QList<uint> tmp;
+    QList<QString> tmp;
     for (auto i : this->task)
     {
-        tmp.append(i.id);
+        tmp.append(i.name);
     }
-    qDebug() << tmp;
+    return tmp;
 }
