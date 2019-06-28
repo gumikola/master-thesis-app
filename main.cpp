@@ -14,11 +14,11 @@ int main()
         {8000, 10, 0.5}, {8000, 10, 0.2},  {8000, 10, 0.5},   {8000, 10, 0.8},
     };
 
-    TasksClass prj1 = db.fetch_by_id(1, 1);
-    TasksClass prj2 = db.fetch_by_id(2, 2);
-    TasksClass prj3 = db.fetch_by_id(3, 1);
-    TasksClass prj4 = db.fetch_by_id(4, 1);
-    TasksClass prj5 = db.fetch_by_id(5, 2);
+    TasksClass prj1 = db.fetch_by_id(1, 3);
+    TasksClass prj2 = db.fetch_by_id(2, 1);
+    TasksClass prj3 = db.fetch_by_id(3, 0);
+    TasksClass prj4 = db.fetch_by_id(4, 0);
+    TasksClass prj5 = db.fetch_by_id(5, 1);
 
     TasksClass test_case = prj1 + prj2 + prj3 + prj4 + prj5;
 
@@ -27,13 +27,13 @@ int main()
     qDebug() << "Badania";
     qDebug() << "Ilosć zadań:" << test_case.size() << "\n";
 
-    //    qDebug() << "Brute Force";
-    //    timer.start();
-    //    result = brute_force(test_case);
-    //    qDebug() << "Czas wykonywania :" << timer.elapsed();
-    //    qDebug() << result.name_prj();
-    //    qDebug() << "Rozwiązanie:" << result.calc_makespan();
-    //    qDebug() << "\n";
+    qDebug() << "Brute Force";
+    timer.start();
+    result = brute_force(test_case);
+    qDebug() << "Czas wykonywania :" << timer.elapsed();
+    qDebug() << result.name_prj();
+    qDebug() << "Rozwiązanie:" << result.calc_makespan();
+    qDebug() << "\n";
 
     for (int i = 0; i <= 3; i++)
     {
