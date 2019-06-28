@@ -14,11 +14,11 @@ int main()
         {8000, 10, 0.5}, {8000, 10, 0.2},  {8000, 10, 0.5},   {8000, 10, 0.8},
     };
 
-    TasksClass prj1 = db.fetch_by_id(1, 3);
-    TasksClass prj2 = db.fetch_by_id(2, 1);
-    TasksClass prj3 = db.fetch_by_id(3, 0);
-    TasksClass prj4 = db.fetch_by_id(4, 0);
-    TasksClass prj5 = db.fetch_by_id(5, 1);
+    TasksClass prj1 = db.fetch_by_id(1, 0);
+    TasksClass prj2 = db.fetch_by_id(2, 0);
+    TasksClass prj3 = db.fetch_by_id(3, 2);
+    TasksClass prj4 = db.fetch_by_id(4, 2);
+    TasksClass prj5 = db.fetch_by_id(5, 0);
 
     TasksClass test_case = prj1 + prj2 + prj3 + prj4 + prj5;
 
